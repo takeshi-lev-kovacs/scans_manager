@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scans Managment Suite - Features Showcase</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header>
+        <h1>Scans Managment Suite v3</h1>
+        <p class="subtitle">Discover how our all-in-one suite can run your scans team for you.</p>
+    </header>
+
+    
+    <div class="main-layout-grid">
+
+        
+        <aside id="page-map-container">
+             <nav id="page-map">
+                <h3>Features Map</h3>
+                <ul id="map-list" class="map-list">
+                    
+                </ul>
+            </nav>
+        </aside>
+
+        
+        <div class="content-area">
+            <main>
+                <div class="controls-container">
+                    <div class="search-wrapper">
+                        <!-- A11y ENHANCEMENT: Added a proper label for the search input -->
+                        <label for="search-input" class="visually-hidden">Search features</label>
+                        <input type="search" id="search-input" placeholder="Search features..." aria-label="Search features">
+                        <div class="search-shortcut-tip">
+                            Pro-Tip: Press <kbd>Ctrl</kbd> + <kbd>K</kbd> for quick search
+                        </div>
+                    </div>
+                    <div class="filters-area">
+                        <div class="filter-group">
+                            <span>Filter by Role</span>
+                            <div class="filter-buttons" id="role-filters">
+                                <button class="active" data-filter="all" aria-pressed="true">All Roles</button>
+                                <button data-filter="general" aria-pressed="false">General</button>
+                                <button data-filter="user" aria-pressed="false">User</button>
+                                <button data-filter="admin" aria-pressed="false">Admin</button>
+                            </div>
+                        </div>
+                         <div class="filter-group">
+                            <span>Filter by Tag</span>
+                            <div class="filter-buttons" id="tag-filters">
+                                <button class="active" data-filter="all" aria-pressed="true">All Tags</button>
+                                <button data-filter="progress" aria-pressed="false">Progress</button>
+                                <button data-filter="points" aria-pressed="false">Points</button>
+                                <button data-filter="misc" aria-pressed="false">Misc</button>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <span>Filter by Module</span>
+                            <div class="filter-buttons" id="module-filters">
+                                <button class="active" data-filter="all" aria-pressed="true">All Modules</button>
+                                <button data-filter="core" aria-pressed="false">Core</button>
+                                <button data-filter="uploader" aria-pressed="false">Uploader</button>
+                                <button data-filter="raw-tracker" aria-pressed="false">Raw Tracker</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="commands-container">
+                    
+                    <div class="command-card" id="cmd-1" data-role="user" data-tags="user misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                            <div class="command-number">1</div>
+                            <div class="command-title-wrapper">
+                                <h2 class="command-title">Register</h2>
+                                <span class="tag role-tag role-tag-user">User</span>
+                                <span class="tag tag-misc">Misc</span>
+                            </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                        </div>
+                        <div class="command-content">
+                            <div class="command-details">
+                                <p class="purpose">
+                                    Onboarding new staff is effortless. With a single command, team members securely register their payment details, email, and any other info you require—like time zones or preferred contact methods. The bot takes care of everything from there: automating channels access, granting Google Drive access, and ensuring all records are up to date. No more chasing down PayPal addresses or missing critical info—your workflow is streamlined from day one.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="command-card" id="cmd-2" data-role="user" data-tags="user progress points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                            <div class="command-number">2</div>
+                            <div class="command-title-wrapper">
+                                <h2 class="command-title">Submit</h2>
+                                <span class="tag role-tag role-tag-user">User</span>
+                                <span class="tag tag-progress">Progress</span>
+                                <span class="tag tag-points">Points</span>
+                            </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                        </div>
+                        <div class="command-content">
+                            <div class="command-details">
+                                <p class="purpose">Forget about manually passing files around or manually recording progress. When a team member finishes their work, they use this command to submit it. The bot instantly gives them their points, updates the chapter's progress, and automatically pings the next person in line. Your workflow just got a whole lot smoother.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                     
+                   <div class="command-card" id="cmd-3" data-role="general" data-tags="general progress" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">3</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Series Progress</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag tag-progress">Progress</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Wanna know where a series is at? This command gives you a crystal-clear overview of every chapter's progress. You can see what's done, what's being worked on, and what's up for grabs. Staff can even claim their next task right from this report, so there's never any confusion about what to work on next.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                     <div class="command-card" id="cmd-4" data-role="user" data-tags="user progress" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">4</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Claim</h2>
+                               <span class="tag role-tag role-tag-user">User</span>
+                               <span class="tag tag-progress">Progress</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Stop two people from accidentally working on the same thing. Staff can claim tasks with a single click from any progress report, which locks the chapter to them. It's a simple way to show the rest of the team, "I got this," and keeps everything organized.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-5" data-role="admin" data-tags="admin progress points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">5</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Undo</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                                <span class="tag tag-progress">Progress</span>
+                                <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Mistakes happen. This command is your magic eraser. Whether someone submitted the wrong file or claimed the wrong chapter, you can easily undo any step in the workflow. It's a powerful tool to fix errors and keep your progress tracking perfectly accurate.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   
+                   <div class="command-card" id="cmd-6" data-role="admin" data-tags="admin progress" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">6</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Category Overview</h2>
+                                <span class="tag role-tag role-tag-admin">Admin</span>
+                                 <span class="tag tag-progress">Progress</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Get a high-level look at how your projects are doing. This command groups all your series by category and gives you a progress report for each one. It's perfect for checking the status of multiple related series at a glance without getting lost in the weeds.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   
+                   <div class="command-card" id="cmd-7" data-role="admin" data-tags="admin progress" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">7</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Server Overview</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                                <span class="tag tag-progress">Progress</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">See everything that's happening across your entire server. This command gives you the ultimate bird's-eye view, showing the progress of every single active series. It’s the best way to get a complete picture of your team's workload and productivity in one go.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                   <div class="command-card" id="cmd-8" data-role="general" data-tags="general progress" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">8</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Chapter Progress</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag tag-progress">Progress</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Need to know the exact status of a single chapter? This command breaks it down for you, step-by-step. You'll see who did what, when they did it, and what's next. It's the perfect tool for troubleshooting a bottleneck or checking on a specific chapter's journey.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   
+                   <div class="command-card" id="cmd-9" data-role="admin manager" data-tags="admin manager progress misc drive" data-module="core"> 
+                    <div class="command-header" role="button" aria-expanded="true">
+                       <div class="command-number">9</div>
+                        <div class="command-title-wrapper">
+                           <h2 class="command-title">Staff Request</h2>
+                           <span class="tag role-tag role-tag-admin">Admin</span>
+                           <span class="tag tag-progress">Progress</span>
+                           <span class="tag tag-misc">Misc</span>
+                       </div>
+                        <span class="toggle-button" aria-hidden="true">▼</span>
+                   </div>
+                   <div class="command-content">
+                       <div class="command-details">
+                           <p class="purpose">Finding help has never been easier. This command lets you post a "Help Wanted" posting right in your server. Staff with the right roles can show interest with one click, and you can even set it up to automatically grant them channel and Google Drive access. It’s a huge time-saver for finding substitutes or staffing new series.</p>
+                       </div>
+                   </div>
+               </div>
+
+                    
+                    <div class="command-card" id="cmd-10" data-role="admin" data-tags="admin misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">10</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Mention</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Need to ping a specific group of people? This command lets you build the perfect mention list. You can target users who have certain roles and exclude others, making sure your announcements reach exactly the right audience every time without any extra noise.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-11" data-role="general" data-tags="general misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">11</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Hyphen</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                                <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">A handy little tool for your typesetters and editors. This command quickly shows the correct way to hyphenate any English word, helping your team maintain professional-looking text and avoid awkward word breaks.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-12" data-role="general" data-tags="general misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">12</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">ID</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                                <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">A simple but essential utility for admins. Quickly grab the unique Discord ID for any user or role. It’s a small thing, but incredibly useful when you're setting up permissions or configuring other bots.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-13" data-role="admin" data-tags="admin misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">13</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Show Email</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                                <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Need a staff member's email fast? Admins can right-click any user to privately and securely view their registered email. It’s perfect for when you need to grant Google Drive access or send a direct message outside of Discord.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-14" data-role="admin" data-tags="admin misc points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">14</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Show Payment Method</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-misc">Misc</span>
+                               <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Make payday a breeze. Admins can securely view a staff member's payment info with a simple right-click. The details are shown only to you, making the payment process quick, private, and painless.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-15" data-role="admin" data-tags="admin misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">15</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Announce</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Get the word out, loud and clear. This command lets you send official, nicely formatted announcements to any channel. You can even attach files, mention specific roles, and automatically pin the message so nobody misses it.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-16" data-role="admin" data-tags="admin misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">16</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Grant Access</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                                <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Onboard a new staff member to a project in seconds. This command does it all: it grants them access to the private series channel on Discord AND shares the project's Google Drive folder with them. One command, zero hassle.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-17" data-role="admin" data-tags="admin misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">17</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Revoke Access</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Securely offboard a staff member from a project. In one step, this command removes a user's access from both the private Discord channel and the project's Google Drive folder, keeping your assets safe when someone leaves a team.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-18" data-role="admin" data-tags="admin points misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">18</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Warn</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-points">Points</span>
+                               <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Keep your team accountable. This command lets you issue a formal, logged warning to a user. You can also automatically deduct points and even apply a "Restricted" role that stops them from claiming new tasks, helping you enforce your team's standards.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-19" data-role="general" data-tags="general admin user misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">19</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Standing</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag role-tag role-tag-user">User</span>
+                               <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Keep track of staff conduct transparently. Anyone can check their own warning status. Admins can view anyone's record and take action right from the report, like clearing warnings or, if necessary, removing the user from the team.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-20" data-role="admin" data-tags="admin progress points misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">20</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Report</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-progress">Progress</span>
+                               <span class="tag tag-points">Points</span>
+                               <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Get powerful insights into your team's performance. This command generates a comprehensive monthly report with all the key stats: total costs, chapters completed, top-performing staff, and more. It gives you the data you need to run your team like a pro.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-21" data-role="general" data-tags="general admin user points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">21</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Leaderboard</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag role-tag role-tag-user">User</span>
+                               <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Spark some friendly competition! This command displays a server-wide leaderboard that ranks everyone by the points they've earned. It's a great way to publicly recognize your most active members and motivate the whole team.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-22" data-role="admin" data-tags="admin points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">22</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Reward</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                                <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Show your appreciation for work that goes above and beyond. This command lets you give out bonus points for things like winning a contest, helping out new members, or just doing an amazing job. It's a great way to reward and motivate your team.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                     <div class="command-card" id="cmd-23" data-role="admin" data-tags="admin points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">23</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Punish</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                                <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Maintain a fair and accountable points system. For rule violations or major errors, this command lets you manually deduct points from a user. The action is logged and announced, ensuring everyone understands the consequences and that the system remains transparent.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-24" data-role="admin" data-tags="admin points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">24</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Transfer</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                                <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Need to move some points around? This command lets you transfer points directly from one staff member's balance to another. It's perfect for correcting point mistakes or handling special arrangements between team members.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   
+                    <div class="command-card" id="cmd-25" data-role="general" data-tags="general admin user points progress" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">25</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Stats</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag role-tag role-tag-user">User</span>
+                               <span class="tag tag-points">Points</span>
+                               <span class="tag tag-progress">Progress</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Get a quick snapshot of anyone's work. Staff can check their own total earnings and recent activity in a flash. Admins can pull up these same stats for any user, giving a clear, instant overview of their contributions.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-26" data-role="general" data-tags="general admin user points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">26</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Points History</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag role-tag role-tag-user">User</span>
+                               <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Transparency is key. This command gives you a detailed, paginated log of every single point adjustment for a user. It shows who made the change, why they made it, and when, covering everything from work submissions to rewards and penalties.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-27" data-role="general admin user" data-tags="general admin user progress points" data-module="core"> 
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">27</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">User Chapters</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                                <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag role-tag role-tag-user">User</span>
+                                <span class="tag tag-progress">Progress</span>
+                                <span class="tag tag-points">Points</span> 
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Need to see what someone has worked on? This command lets you pull a complete list of all chapters submitted by a user. You can even filter it by a specific series or job type, making it easy to review someone's work history.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                     <div class="command-card" id="cmd-28" data-role="general" data-tags="general progress misc points admin" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">28</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Series Info</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-progress">Progress</span>
+                               <span class="tag tag-misc">Misc</span>
+                               <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Get all the key details about a series in one neat package. This command shows you the assigned staff -main and substitutes, the pay rates for each job, and other important info like deadlines. It’s the perfect way to quickly find out who's on the team and how much each chapter costs.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   
+                    <div class="command-card" id="cmd-29" data-role="admin" data-tags="admin points" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">29</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Due</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-points">Points</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Need to know your team's total payroll at a glance? This simple admin command calculates the sum of all points owed to every staff member on the server. It's an essential tool for budgeting and managing your finances.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-30" data-role="admin" data-tags="admin points misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">30</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Series Rates</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-points">Points</span>
+                               <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Set custom pay scales for every project. This command lets you define exactly how many points are awarded for each job (like Translation or Editing) on a per-series basis. This gives you the flexibility to offer fair compensation that matches the difficulty of each series.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-31" data-role="admin" data-tags="admin progress misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">31</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Series Staff</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-progress">Progress</span>
+                                <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Define your dream team for every project. This command lets you assign primary and substitute staff members for each role in a series. This setup is what powers the automated notification system, making sure the right person always gets pinged for the next step.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   
+                    <div class="command-card" id="cmd-32" data-role="admin" data-tags="admin misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">32</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Series Details</h2>
+                                <span class="tag role-tag role-tag-admin">Admin</span>
+                                 <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Create a central database for all your projects. This command lets you store important info for each series, like alternative names, release schedules, and crucial links. Linking a Google Drive folder here is the key to enabling fully automated access management features.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-33" data-role="admin" data-tags="admin progress misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">33</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Series Deadlines</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                                <span class="tag tag-progress">Progress</span>
+                                 <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Keep your projects on schedule and prevent delays. This command lets you set custom deadlines for each step of the workflow. The bot then uses these deadlines to automatically send reminders to staff and managers about any tasks that are overdue.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                    
+                    <div class="command-card" id="cmd-34" data-role="admin" data-tags="admin misc progress" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">34</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Create Series Channel</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-misc">Misc</span>
+                               <span class="tag tag-progress">Progress</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Forget about manual setup. This powerhouse command automates the entire process of starting a new series. In one go, it creates a new Discord channel, provisions a standardized Google Drive folder structure, and records all the metadata in the database, so your team is ready to go instantly.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="command-card" id="cmd-35" data-role="general user" data-tags="general user misc" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">35</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">User Series</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag role-tag role-tag-user">User</span>
+                               <span class="tag tag-misc">Misc</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Give your team clarity on their commitments. Any staff member can run this command to see a neat list of all the series they're officially assigned to and what their role is on each one. It's a great way to help everyone keep track of their projects.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="command-card" id="cmd-36" data-role="general user" data-tags="general user progress" data-module="core">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">36</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">User Claims</h2>
+                               <span class="tag role-tag role-tag-general">General</span>
+                               <span class="tag role-tag role-tag-user">User</span>
+                               <span class="tag tag-progress">Progress</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Help your team stay on top of their current tasks. This command shows a user all the chapters they've claimed but haven't submitted yet. It's a personal to-do list that helps prevent work from getting lost in the shuffle.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="command-card" id="cmd-37" data-role="admin" data-tags="admin misc uploader" data-module="uploader">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">37</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Bind Series (Uploader)</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-misc">Misc</span>
+                               <span class="tag tag-uploader">Uploader</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">This is the simple, one-time setup for the automated uploader. Use this command to link a Discord channel to its corresponding series name or id on a website. Once it's set, the bot knows exactly where to post chapters, making your release process a smooth, one-click affair.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="command-card" id="cmd-38" data-role="admin" data-tags="admin progress uploader" data-module="uploader">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">38</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Upload to Scans Site</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-progress">Progress</span>
+                               <span class="tag tag-uploader">Uploader</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Automate your releases. This command lets your uploader post a finished chapter directly to your Scans Site from a zip file. It even includes advanced options for monetization, like setting a chapter as paid, defining the coin cost, and configuring timed locks, all from the comfort of Discord.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="command-card" id="cmd-39" data-role="admin" data-tags="admin progress uploader" data-module="uploader">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">39</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Upload to Aggregation Sites</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-progress">Progress</span>
+                               <span class="tag tag-uploader">Uploader</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Expand your audience by automating uploads to all major sites like Bato.to, MangaDex, and more. This flexible tool lets you upload a chapter either by attaching a zip file in Discord or by just pasting a Google Drive link. The bot handles all the processing and posts to every configured site, saving you time and effort.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="command-card" id="cmd-40" data-role="admin" data-tags="admin progress uploader" data-module="uploader">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">40</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Cross-Site Uploader</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-progress">Progress</span>
+                               <span class="tag tag-uploader">Uploader</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">This is the ultimate time-saver for multi-platform groups. Forget manual downloading and re-uploading. Just tell the bot which chapters to grab from a sites and where to post them in the other. It handles the entire process automatically, whether it's one chapter or a hundred.</p>
+                           </div>
+                       </div>
+                   </div>
+                   
+                   
+
+                   <div class="command-card" id="cmd-41" data-role="admin" data-tags="admin progress misc raw-tracker" data-module="raw-tracker">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">41</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Automated Raw Chapter Tracking</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-progress">Progress</span>
+                               <span class="tag tag-raw-tracker">Raw Tracker</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Tired of refreshing raw sites all day? Let the bot do it for you. Just tell it which series to watch on sites like Naver, Kakao, or Bilibili. The second a new raw chapter drops, the bot will instantly post an alert in your server with the link, pinging whoever needs to see it. It's the secret weapon for a lightning-fast workflow.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="command-card" id="cmd-42" data-role="admin" data-tags="admin misc raw-tracker" data-module="raw-tracker">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">42</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Track Series</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-misc">Misc</span>
+                               <span class="tag tag-raw-tracker">Raw Tracker</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Add any series to your automated watchlist with one command. Just provide the series URL and tell the bot which chapter to start tracking from. You can customize notifications for each series, setting a specific channel, a role to ping, or even an individual member to alert when a new raw is out.</p>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="command-card" id="cmd-43" data-role="admin" data-tags="admin misc raw-tracker" data-module="raw-tracker">
+                        <div class="command-header" role="button" aria-expanded="true">
+                           <div class="command-number">43</div>
+                            <div class="command-title-wrapper">
+                               <h2 class="command-title">Manage Trackers</h2>
+                               <span class="tag role-tag role-tag-admin">Admin</span>
+                               <span class="tag tag-misc">Misc</span>
+                               <span class="tag tag-raw-tracker">Raw Tracker</span>
+                           </div>
+                            <span class="toggle-button" aria-hidden="true">▼</span>
+                       </div>
+                       <div class="command-content">
+                           <div class="command-details">
+                               <p class="purpose">Get a clean, organized view of every series you're tracking. This interactive menu lets you see your whole watchlist at a glance. You can easily select any series to change its settings (like the notification channel) or remove it from tracking altogether. It's all about simple, powerful control.</p>
+                           </div>
+                       </div>
+                   </div>
+                    
+                </div>
+            </main>
+        </div> 
+
+    </div> 
+
+    <!-- A11y ENHANCEMENT: Added modal role and label for screen readers -->
+    <div id="fullscreen-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <div class="fullscreen-controls">
+            <div class="fullscreen-controls-left">
+                 <span id="fullscreen-counter" class="fullscreen-info"></span>
+            </div>
+            <div class="fullscreen-controls-right">
+                <button id="fullscreen-zoom-out" class="fullscreen-control-btn" aria-label="Zoom out" title="Zoom Out">-</button>
+                <button id="fullscreen-zoom-in" class="fullscreen-control-btn" aria-label="Zoom in" title="Zoom In">+</button>
+                 <button id="fullscreen-zoom-reset" class="fullscreen-control-btn" aria-label="Reset zoom" title="Reset Zoom">↺</button>
+                <button id="fullscreen-close" class="fullscreen-control-btn" aria-label="Close fullscreen image viewer" title="Close (Esc)">×</button>
+            </div>
+        </div>
+
+        <button id="fullscreen-prev" class="fullscreen-nav-btn" aria-label="Previous image" title="Previous (←)"><</button>
+        <div class="fullscreen-image-container">
+            <img id="fullscreen-image" src="" alt="Fullscreen Image">
+        </div>
+        <button id="fullscreen-next" class="fullscreen-nav-btn" aria-label="Next image" title="Next (→)">></button>
+
+         <div id="fullscreen-dots" class="fullscreen-dots-container">
+         </div>
+    </div>
+    
+    <!-- A11y ENHANCEMENT: Added modal role and accessible name for screen readers -->
+    <div id="quick-switcher-overlay" class="hidden" role="dialog" aria-modal="true" aria-labelledby="qs-heading">
+        <div id="quick-switcher-modal">
+            <h2 id="qs-heading" class="visually-hidden">Quick feature search</h2>
+            <div class="qs-input-wrapper">
+                <input type="text" id="qs-input" placeholder="Where would you like to go?" autocomplete="off">
+                <div class="qs-shortcut">Ctrl+K</div>
+            </div>
+            <div class="qs-results-container">
+                <ul id="qs-results-list"></ul>
+                <div id="qs-no-results" class="hidden">
+                    <p>No results found.</p>
+                    <span>Try searching for a command name, number, or keyword.</span>
+                </div>
+            </div>
+            <div class="qs-footer">
+                <span class="qs-tip"><b>↑↓</b> to navigate</span>
+                <span class="qs-tip"><b>↵</b> to select</span>
+                <span class="qs-tip"><b>esc</b> to dismiss</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
