@@ -101,7 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
             newActiveLink.classList.add('active');
             currentActiveMapLink = newActiveLink;
             if (pageMapContainer && pageMapContainer.scrollHeight > pageMapContainer.clientHeight) {
-                currentActiveMapLink.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                // UX ENHANCEMENT: Changed 'nearest' to 'center' to always keep the active link in view.
+                currentActiveMapLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
     }
@@ -183,8 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- UI Interactions (Cards, Copy, Carousel) ---
     
-    // PERFORMANCE: Use a single delegated event listener for all card interactions.
-    // This replaces over 80 individual listeners with just one.
     if (commandsContainer) {
         commandsContainer.addEventListener('click', (e) => {
             // Handle Card Header Clicks (Expand/Collapse)
@@ -416,11 +415,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // BUG FIX: Implement the missing navigation function for the Quick Switcher.
     function navigateQuickSwitcher(direction) {
         if (qsResults.length === 0) return;
         const newIndex = qsActiveIndex + direction;
-        // This robust modulo logic handles wrapping around in both directions (up from first, down from last)
         const nextIndex = (newIndex + qsResults.length) % qsResults.length;
         setActiveQuickSwitcherItem(nextIndex);
     }
@@ -575,7 +572,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- Event Listeners Setup ---
 
-    // PERFORMANCE: Utility to debounce function calls.
     function debounce(func, delay = 250) {
         let timeoutId;
         return (...args) => {
@@ -586,14 +582,12 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // PERFORMANCE: Use the debounced function for the search input.
     searchInput.addEventListener('input', debounce(filterAndSearchCommands));
 
     handleFilterClick('#role-filters');
     handleFilterClick('#tag-filters');
     handleFilterClick('#module-filters');
 
-    // PERFORMANCE: Use a single delegated listener for image clicks.
     contentArea.addEventListener('click', (e) => {
         const targetImage = e.target.closest('img[data-fullscreenable="true"]');
         if (targetImage) {
@@ -631,12 +625,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (qsVisible) {
             switch (e.key) {
                 case 'Escape': closeQuickSwitcher(); break;
-                // BUG FIX: The navigateQuickSwitcher function is now called correctly.
                 case 'ArrowDown': e.preventDefault(); navigateQuickSwitcher(1); break;
                 case 'ArrowUp': e.preventDefault(); navigateQuickSwitcher(-1); break;
                 case 'Enter': e.preventDefault(); selectQuickSwitcherResult(); break;
             }
-            return; // Prevent other handlers when QS is active
+            return;
         }
         if (fullscreenOverlay.classList.contains('active')) {
             switch (e.key) {
