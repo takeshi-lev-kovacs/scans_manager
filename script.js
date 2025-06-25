@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const moduleFilterButtons = document.querySelectorAll('#module-filters button');
     const commandCards = document.querySelectorAll('.command-card');
     const contentArea = document.querySelector('.content-area');
-    const commandsContainer = document.querySelector('.commands-container'); // Used for delegation
+    const commandsContainer = document.querySelector('.commands-container');
 
     const pageMapList = document.getElementById('map-list');
-    const pageMapContainer = document.getElementById('page-map-container');
+    // MODIFIED: We need the scrollable container itself, not the inner nav element.
+    const pageMapScrollContainer = document.getElementById('page-map');
 
     // Fullscreen Image Viewer
     const fullscreenOverlay = document.getElementById('fullscreen-overlay');
@@ -50,6 +51,33 @@ document.addEventListener('DOMContentLoaded', () => {
     let mapNavTimeout;
 
     // --- Page Map & Intersection Observer ---
+    
+    // NEW: Function to intelligently scroll the page map to keep the active link centered.
+    function smartScrollPageMap(activeLink) {
+        if (!pageMapScrollContainer || !activeLink) return;
+
+        const containerHeight = pageMapScrollContainer.clientHeight;
+        
+        // The link's position relative to the top of the entire scrollable list
+        const linkTop = activeLink.offsetTop;
+        const linkHeight = activeLink.offsetHeight;
+
+        // Calculate the desired scroll position to center the link
+        const desiredScrollTop = linkTop - (containerHeight / 2) + (linkHeight / 2);
+
+        // Calculate the maximum possible scroll position
+        const maxScrollTop = pageMapScrollContainer.scrollHeight - containerHeight;
+        
+        // Clamp the desired scroll position so it doesn't go past the top or bottom
+        const finalScrollTop = Math.max(0, Math.min(desiredScrollTop, maxScrollTop));
+
+        // Smoothly scroll the container to the calculated position
+        pageMapScrollContainer.scrollTo({
+            top: finalScrollTop,
+            behavior: 'smooth'
+        });
+    }
+
     function generatePageMap() {
         if (!pageMapList) return;
         pageMapList.innerHTML = '';
@@ -95,20 +123,29 @@ document.addEventListener('DOMContentLoaded', () => {
         mapLinks = Array.from(pageMapList.querySelectorAll('.map-link'));
     }
 
+    // MODIFIED: The original updateActiveMapLink function is replaced with this enhanced version.
     function updateActiveMapLink(newActiveLink) {
         if (newActiveLink && newActiveLink !== currentActiveMapLink) {
             currentActiveMapLink?.classList.remove('active');
             newActiveLink.classList.add('active');
             currentActiveMapLink = newActiveLink;
-            if (pageMapContainer && pageMapContainer.scrollHeight > pageMapContainer.clientHeight) {
-                // UX ENHANCEMENT: Changed 'nearest' to 'center' to always keep the active link in view.
-                currentActiveMapLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Check if the map has a scrollbar before attempting to scroll it
+            if (pageMapScrollContainer && pageMapScrollContainer.scrollHeight > pageMapScrollContainer.clientHeight) {
+                if (isNavigatingViaMap) {
+                    // This was a click, so just ensure it's visible ('nearest' is efficient)
+                    currentActiveMapLink.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    // This was a page scroll, use the new smart centering scroll
+                    smartScrollPageMap(currentActiveMapLink);
+                }
             }
         }
     }
 
+
     function setupIntersectionObserver() {
-        if (!pageMapContainer || window.innerWidth < 1024 || mapLinks.length === 0) {
+        if (!pageMapScrollContainer || window.innerWidth < 1024 || mapLinks.length === 0) {
             cardsObserver?.disconnect();
             return;
         }
@@ -183,23 +220,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- UI Interactions (Cards, Copy, Carousel) ---
-    
     if (commandsContainer) {
         commandsContainer.addEventListener('click', (e) => {
-            // Handle Card Header Clicks (Expand/Collapse)
             const header = e.target.closest('.command-header');
             if (header) {
                 const card = header.closest('.command-card');
                 if (!card) return;
                 const isCollapsed = card.classList.toggle('collapsed');
                 header.setAttribute('aria-expanded', String(!isCollapsed));
-                return; // Interaction handled
+                return;
             }
 
-            // Handle Copy Button Clicks
             const copyButton = e.target.closest('.copy-btn');
             if (copyButton) {
-                e.stopPropagation(); // Prevent card from toggling
+                e.stopPropagation();
                 const commandUsageContainer = copyButton.closest('.command-usage-container');
                 if (!commandUsageContainer) return;
                 const commandUsageDiv = commandUsageContainer.querySelector('.command-usage');
@@ -223,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('Failed to copy text: ', err);
                     alert('Failed to copy command.');
                 });
-                return; // Interaction handled
+                return;
             }
         });
     }
@@ -571,7 +605,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // --- Event Listeners Setup ---
-
     function debounce(func, delay = 250) {
         let timeoutId;
         return (...args) => {
@@ -581,7 +614,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, delay);
         };
     }
-
     searchInput.addEventListener('input', debounce(filterAndSearchCommands));
 
     handleFilterClick('#role-filters');
